@@ -364,7 +364,7 @@ iptables_fw_init(void)
     /* Insert at the beginning */
     iptables_do_command("-t filter -I FORWARD -i %s -j " CHAIN_TO_INTERNET, config->gw_interface);
 
-    iptables_do_command("-t filter -A " CHAIN_TO_INTERNET " -m state --state INVALID -j DROP");
+    // iptables_do_command("-t filter -A " CHAIN_TO_INTERNET " -m state --state INVALID -j DROP");
 
     /* XXX: Why this? it means that connections setup after authentication
        stay open even after the connection is done... 
